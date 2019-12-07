@@ -50,6 +50,19 @@ public class StringUtils {
 	}
 	
 	/**
+	 * 判断是否为数字
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNumber(String str) {
+		String regex = "^\\d{1,}$";
+		Pattern compile = Pattern.compile(regex);
+		Matcher matcher = compile.matcher(str);
+		boolean find = matcher.find();
+		return find;
+	}
+	
+	/**
 	 * 
 	 * @param str
 	 * @return
