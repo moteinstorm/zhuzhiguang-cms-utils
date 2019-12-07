@@ -22,7 +22,7 @@ public class FileUtils {
 	 * 
 	 * @param String fileName
 	 */
-	public static String getSuffixName(String fileName) {
+	public static synchronized String getSuffixName(String fileName) {
 		
 		//获取最后一个点的位置
 		int dotPos = fileName.lastIndexOf('.');
@@ -244,7 +244,7 @@ public class FileUtils {
 	 * @param dstFile  目标文件
 	 * @throws IOException 
 	 */
-	public static void copy(String srcFileName ,String dstFileName) throws IOException {
+	public synchronized static void copy(String srcFileName ,String dstFileName) throws IOException {
 		// 源文件
 		File srcFile = new File(srcFileName);
 		File dstFile = new File(dstFileName);
