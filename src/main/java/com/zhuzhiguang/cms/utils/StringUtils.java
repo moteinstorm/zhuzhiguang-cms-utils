@@ -2,7 +2,6 @@ package com.zhuzhiguang.cms.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
-import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,6 +11,9 @@ import java.util.regex.Pattern;
  *
  */
 public class StringUtils {
+	
+	
+	
 	
 	/**
 	 *  随机字符串源
@@ -28,6 +30,21 @@ public class StringUtils {
 	}
 	
 	
+	/**
+	 * 判断手机号码是否为数值，是否长度为11位，开始位必须是1 
+	 * @param src
+	 * @return
+	 */
+	public static boolean judgeTelephoneIsOk(String src){
+		
+		String regex = "^1\\d{10}$";
+		
+		Pattern compile = Pattern.compile(regex);
+		Matcher matcher = compile.matcher(src);
+		boolean find = matcher.matches();
+		return find;
+		
+	}
 	
 
 	/**
@@ -47,6 +64,31 @@ public class StringUtils {
 	 */
 	public static boolean haveValue(String str) {
 		return null!=str && !"".equals(str.trim());
+	}
+	
+	
+	/**
+	 * 判断一个字符串时间否有值 
+	 * @param str   
+	 * @return 非空返回true  空字符串或空返回false
+	 */
+	public static boolean haveText(String str) {
+		return null!=str && !"".equals(str.trim());
+	}
+	
+
+	
+	/**
+	 *  验证是否为邮箱 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isEmail(String str) {
+		
+		String pattern = "^\\w+@\\w+\\.[a-zA-Z]{2,3}$";
+		Pattern compile = Pattern.compile(pattern);
+		Matcher matcher = compile.matcher(str);
+		return matcher.matches();
 	}
 	
 	/**

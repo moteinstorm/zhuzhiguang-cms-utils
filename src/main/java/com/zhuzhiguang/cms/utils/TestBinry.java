@@ -27,7 +27,9 @@ public class TestBinry {
 		t1.test2();
 		
 		t2.test1();
-		
+		//Math.random(0.12);
+		//Math.ron
+		/*
 		ArrayList<Object> arrayList = new ArrayList<Object>();
 		arrayList.add("");
 		new Vector();
@@ -35,7 +37,7 @@ public class TestBinry {
 		HashMap<Object, Object> hashMap = new HashMap<>();
 		
 		hashMap.put("aa", "fff");
-		new ConcurrentHashMap<>();
+		new ConcurrentHashMap<>();*/
 		
 		
 		
